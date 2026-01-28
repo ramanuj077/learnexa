@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function TeacherSidebar() {
     return (
-        <aside className="w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex-shrink-0 hidden lg:flex lg:flex-col h-screen overflow-y-auto">
+        <aside className="w-64 bg-white dark:bg-slate-900 border-r border-slate-200 dark:border-slate-800 flex-shrink-0 hidden lg:flex lg:flex-col overflow-y-auto">
             {/* Logo */}
             <div className="p-6 flex items-center gap-3">
                 <div className="w-10 h-10 bg-primary-teacher rounded-lg flex items-center justify-center text-white">
