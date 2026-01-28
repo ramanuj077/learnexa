@@ -7,7 +7,7 @@ interface Student {
     name: string;
     initials: string;
     initialsColor: string;
-    status: "P" | "A" | "L" | null;
+    status: "P" | "A" | null;
 }
 
 export default function CurrentClassAttendance() {
@@ -17,7 +17,7 @@ export default function CurrentClassAttendance() {
         { id: 3, name: "Chris Ray", initials: "CR", initialsColor: "bg-rose-100 dark:bg-rose-900/40 text-rose-600", status: null },
     ]);
 
-    const markAttendance = (studentId: number, status: "P" | "A" | "L") => {
+    const markAttendance = (studentId: number, status: "P" | "A") => {
         setStudents(students.map(s => s.id === studentId ? { ...s, status } : s));
     };
 
@@ -70,8 +70,8 @@ export default function CurrentClassAttendance() {
                                 <button
                                     onClick={() => markAttendance(student.id, "P")}
                                     className={`w-8 h-8 rounded-lg flex items-center justify-center hover:scale-110 transition-transform ${student.status === "P"
-                                            ? "bg-emerald-600 text-white"
-                                            : "bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600"
+                                        ? "bg-emerald-600 text-white"
+                                        : "bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600"
                                         }`}
                                 >
                                     P
@@ -79,21 +79,13 @@ export default function CurrentClassAttendance() {
                                 <button
                                     onClick={() => markAttendance(student.id, "A")}
                                     className={`w-8 h-8 rounded-lg flex items-center justify-center hover:scale-110 transition-transform ${student.status === "A"
-                                            ? "bg-red-600 text-white"
-                                            : "bg-red-100 dark:bg-red-900/40 text-red-600"
+                                        ? "bg-red-600 text-white"
+                                        : "bg-red-100 dark:bg-red-900/40 text-red-600"
                                         }`}
                                 >
                                     A
                                 </button>
-                                <button
-                                    onClick={() => markAttendance(student.id, "L")}
-                                    className={`w-8 h-8 rounded-lg flex items-center justify-center hover:scale-110 transition-transform ${student.status === "L"
-                                            ? "bg-amber-600 text-white"
-                                            : "bg-amber-100 dark:bg-amber-900/40 text-amber-600"
-                                        }`}
-                                >
-                                    L
-                                </button>
+
                             </div>
                         </div>
                     ))}
